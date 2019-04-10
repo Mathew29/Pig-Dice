@@ -72,5 +72,4 @@ function attachListeners() {
 
 $(document).ready(function() {
   attachListeners();
-  console.log('hey');
 });
