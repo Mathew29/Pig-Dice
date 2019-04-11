@@ -58,7 +58,7 @@ function attachListeners() {
         $("." + active.player).empty();
         var formatString = active.player;
         formatString = formatString[0].toUpperCase() + formatString.slice(1,formatString.length-1) + " "+formatString[formatString.length-1];
-        $("." + active.player).append("<h2>" + formatString + ": " + active.score + "</h2>");
+        $("." + active.player).append(formatString + ": " + active.score);
         $(".bank").empty();
         $(".bank").append(scoreBoard.bank);
         scoreBoard.swapActive();
@@ -78,11 +78,21 @@ function attachListeners() {
     $("." + active.player).empty();
     var formatString = active.player;
     formatString = formatString[0].toUpperCase() + formatString.slice(1,formatString.length-1) + " "+formatString[formatString.length-1];
-    $("." + active.player).append("<h2>" + formatString + ": " + active.score + "</h2>" )
+    $("." + active.player).append(formatString + ": " + active.score)
     $(".bank").empty();
     $(".bank").append(scoreBoard.bank);
     scoreBoard.swapActive();
 
+  });
+  $(".container").on("click", ".restart", function() {
+    $(".bank").empty();
+    $(".result").empty();
+    $(".player1").empty();
+    $(".player2").empty();
+    $(".player1").append("Player 1: 0");
+    $(".player2").append("Player 2: 0");
+    $(".bank").append(" 0");
+    scoreBoard = new Scoreboard;
   });
 
 
